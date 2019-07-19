@@ -49,6 +49,9 @@ med.norm <- "yes"
 # Cut-off value for the Q test scores. (If Zmax or Zmin > z.cutoff, those lectins are removed)
 z.cutoff <- 1.15
 
+# Choice of colors for the heatmap of final output data
+heatmap.color <- c("blue","yellow")
+
 
 
 # Display preferences
@@ -159,6 +162,9 @@ threshold <- function(x){
   }else{ as.numeric(x[3]) }
   
 }
+
+
+colorgradient <- colorRampPalette(heatmap.color)
 
 
 
@@ -571,7 +577,6 @@ if (process.mode == "dual"){
       write.table(data.step5.array, fname.output, row.names = FALSE, col.names = TRUE, sep = "\t")
       
       
-      
     }
     
   }
@@ -728,7 +733,11 @@ if (process.mode == "single"){
   
 }
 
-heatmap(as.matrix(data.step5.array), Colv = NA, scale = 'none', col = c("blue","yellow"))
+png(paste(substring(fname.output,1,nchar(fname.output)-4), "_heatmap.png", sep = ""), width = 1600, height = 1000, res = 100)
+heatmap(as.matrix(data.step5.array), Colv = NA, scale = 'none', col = colorgradient(16))
+dev.off()
+
+
 
 
 
