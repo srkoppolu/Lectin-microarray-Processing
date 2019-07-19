@@ -1,0 +1,120 @@
+AAA 
+AAL
+AOL
+UEA-I
+PTL-II
+TJA-II
+PSA
+CCA
+LFA
+LPA 
+MAA new
+MAL-I vector
+MAL-II vector
+SNA
+TJA-I
+PSL
+PHA-L_V
+PHA-L_EY
+ECA
+RCA (fridge)
+PHA-E_V
+PHA-E_EY
+CA
+BPA
+APA old
+GS-I_V
+GS-I_EY
+APP
+BDA  new
+Blackbean
+CAA
+CSA
+IRA new
+VVA
+WFA
+ASA
+AMA new
+Calsepa new
+Con A new
+CVN 
+GNA (Vector)
+GRFT new
+HHL
+NPA_1.0
+SVN
+MNA-M 
+PMA
+TL
+UDA
+VVA (mann) 
+VFA
+LcH
+"Jacalin, AIA"
+EEL 
+EEA
+MPA (Vector)
+GHA
+PNA_V
+PNA_EY
+GS-I
+GNA
+ACA
+DBA
+SBA
+SJA
+HAA
+NA_1
+HPA_EY
+HPA_Sigma
+SNA-II
+PTL-I
+LBA
+DSA
+DSA (fridge) 1
+GS-II
+UEA-II
+DSA (fridge) 2
+RPA
+LEA_V
+LEA_EY
+STA
+WGA_V
+WGA_EY
+Cholera Toxin (fridge)
+MOA new
+MNA-G
+Lotus
+IAA
+PTA
+Ricin B Chain (Fridge)
+DC-SIGN
+NPA_2.0
+NA_2
+NA_3
+PA-I 
+7 LE lewis A
+SPM 10 Sialyl Lewis A
+Le X P12 SCBT
+Le X R and D (CD 15)
+Lewis Y
+Lewis Y IgM
+NA_4
+NA_5
+NA_6
+NA_7
+NA_8
+NA_9
+NA_10
+NA_11
+NA_12
+NA_13
+NA_14
+NA_15
+NA_16
+NA_17
+NA_18
+NA_19
+NA_20
+NA_21
+NA_22

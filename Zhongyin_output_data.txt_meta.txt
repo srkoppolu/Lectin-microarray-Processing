@@ -1,0 +1,13 @@
+Input Data File =  Zhongyin_Lectin_Array.txt 
+Input Lectins File =  Zhongyin_PrintList.txt 
+Input Samples File =  Zhongyin_SamplesList.txt 
+Type =  GenePix Export 3" 
+Date and Time =  2014/03/28 12:10:34" 
+Settings =  C:\Documents and Settings\MahalLab3\Desktop\LZY\miR200 treated\20140327_setting.gps" 
+Pixel Size =  5" 
+Wavelengths =  532 ,  635 
+Image File =  C:\Documents and Settings\MahalLab3\Desktop\LZY\miR200 treated\20140327_2_.tif 2 
+PMT Gain =  425 ,  570 
+Scan Power =  70	 ,  0" 
+Laser Power =  2.11 ,  1.69 
+Filters =  Standard Green ,  Standard Red" 
