@@ -1,0 +1,105 @@
+AAA 
+AAL
+AOL
+UEA-I
+PTL-II
+TJA-II
+PSA
+CCA
+LFA
+LPA 
+MAA
+MAL-I
+MAL-II
+SNA
+TJA-I
+PSL
+PHA-L Vector
+PHA-L EY
+ECA
+Galectin-1 His Tagged
+PHA-E Vector
+PHA-E EY
+CA
+BPA
+APA
+GS-I
+GS-I EY
+APP
+BDA
+Blackbean
+CAA
+CSA
+IRA
+VVA
+WFA
+ASA
+AMA
+Calsepa
+Con A
+CVN 
+GNA
+GRFT
+HHL
+NPA new
+Galectin-1
+MNA-M 
+PMA
+TL
+UDA
+VVA (mann) 
+VFA
+LcH
+"Jacalin, AIA"
+EEL 
+EEA
+MPA
+GHA
+PNA Vector
+PNA EY
+GS-I old
+GNL
+ACA
+DBA
+SBA
+SJA
+HAA
+CD15 Ab
+HPA EY
+HPA Sigma
+SNA-II
+PTL-I
+LBA
+DSA EY
+DSA fro
+GS-II
+UEA-II
+DSA frid
+RPA
+LEA Vector
+LEA EY
+STA
+WGA Vector
+WGA EY
+Cholera Toxin
+MOA
+MNA-G
+Lotus
+IAA
+PTA
+Ricin B Chain
+Le y Ab
+NPA old
+PA-I 
+7 LE lewis A
+SPM 10 Sialyl Lewis A
+Le X P12 SCBT
+e1
+e2
+e3
+e4
+e5
+e6
+e7
+e8
+e9

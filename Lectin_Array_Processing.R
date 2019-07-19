@@ -9,13 +9,13 @@
 WD <- "E:/Mahal_Lab/Praveen_Scripts/Lectin_Array_Processing"
 
 # Enter the name of the three input files.
-fname.data <- "Zhongyin_Lectin_Array.txt" # Data File
-fname.lectins <- "Zhongyin_PrintList.txt" # Printlist of lectins, just the list of lectins used in order.
-fname.samples <- "Zhongyin_SamplesList.txt" # Samples file indicating arrays(blocks)
+fname.data <- "Lawrence_input_data.txt" # Data File
+fname.lectins <- "Lawrence_lectinlist.txt" # Printlist of lectins, just the list of lectins used in order.
+fname.samples <- "Lawrence_sample.txt" # Samples file indicating arrays(blocks)
 
 # Desired filename for the output file
 # Do not include the ".txt" filetype at the end.
-fname.output <- "Zhongyin_output_data.txt"
+fname.output <- "Lawrence_output_data.txt"
 
 ###########################################
 
@@ -160,7 +160,7 @@ threshold <- function(x){
   
   if(as.numeric(x[3]) < 1){
     100
-  }else{ as.numeric(x[3]) }
+  } else{ as.numeric(x[3]) }
   
 }
 

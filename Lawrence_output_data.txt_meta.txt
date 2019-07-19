@@ -1,0 +1,13 @@
+Input Data File =  Lawrence_input_data.txt 
+Input Lectins File =  Lawrence_lectinlist.txt 
+Input Samples File =  Lawrence_sample.txt 
+Type =  GenePix Export 3" 
+Date and Time =  2014/05/28 21:55:08" 
+Settings =  " 
+Pixel Size =  5" 
+Wavelengths =  635 ,  532 
+Image File =  C:\Users\Lawrence\Desktop\milk-5-28-14.tif 2 
+PMT Gain =  500 ,  420 
+Scan Power =  100 ,  100 
+Laser Power =  1.67 ,  2.22 
+Filters =  Standard Red ,  Standard Green" 
