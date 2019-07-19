@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1563568107613.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "CA07F0A8",
+    "lastKnownWriteTime" : 1563562217,
+    "last_content_update" : 1563568201038,
+    "path" : "E:/Dropbox/Mahal_lab/Praveen_Scripts/Lectin_Array_Processing/Lectin_Array_Processing_v1.6.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "27,0",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
