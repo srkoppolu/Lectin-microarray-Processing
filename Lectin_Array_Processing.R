@@ -9,13 +9,13 @@
 WD <- "E:/Mahal_Lab/Praveen_Scripts/Lectin_Array_Processing"
 
 # Enter the name of the three input files.
-fname.data <- "Lawrence_input_data.txt" # Data File
-fname.lectins <- "Lawrence_lectinlist.txt" # Printlist of lectins, just the list of lectins used in order.
-fname.samples <- "Lawrence_sample.txt" # Samples file indicating arrays(blocks)
+fname.data <- "Zhongyin_Lectin_Array.txt" # Data File
+fname.lectins <- "Zhongyin_PrintList.txt" # Printlist of lectins, just the list of lectins used in order.
+fname.samples <- "Zhongyin_SamplesList.txt" # Samples file indicating arrays(blocks)
 
 # Desired filename for the output file
 # Do not include the ".txt" filetype at the end.
-fname.output <- "Lawrence_output_data.txt"
+fname.output <- "Zhongyin_output_data.txt"
 
 ###########################################
 
@@ -63,30 +63,15 @@ remove.flags <- NULL
 
 ##############################################################################################
 ##############################################################################################
-##############################################################################################
-##############################################################################################
-##############################################################################################
+
 
 
 ############  Load Packages  ##############
 
-# install.packages("tm")
-library("tm")
-
-# install.packages("reshape")
-library("reshape")
-
-# install.packages("reshape2")
-library("reshape2")
-
-# install.packages("matrixStats")
-library("matrixStats")
-
-# install.packages("gplots")
-library("gplots")
-
-
-
+# Define the required packages and install/load them using the custom built PackageLoad2 function
+reqd.packages <- c("tm","reshape2","matrixStats","gplots")
+source("E:/Dropbox/Git_Files/PackageLoad2.R")
+PackageLoad2(reqd.packages)
 
 
 
@@ -160,7 +145,7 @@ threshold <- function(x){
   
   if(as.numeric(x[3]) < 1){
     100
-  } else{ as.numeric(x[3]) }
+  }else{ as.numeric(x[3]) }
   
 }
 
@@ -468,7 +453,7 @@ if (flag.display){
 
 
 ############  Data Processing :: Data Processing  ##############
-########################################################
+################################################################
 
 ############ Step 1 : Original Values
 ############ Step 2 : Z-score values
@@ -749,11 +734,13 @@ if (process.mode == "single"){
   data.step5.melt <- melt(data.step5, id = c("Lectin","Sample"))
   data.step5.array <- cast(data.step5.melt, Lectin~Sample)
   
+  # Write output data into a text file with the user defined filename in fname.output
   write.table(data.step5.array, fname.output, row.names = FALSE, col.names = TRUE, sep = "\t")
   
   
 }
 
+## Generate and save a heatmap of the array in the working directory
 png(paste(substring(fname.output,1,nchar(fname.output)-4), "_heatmap.png", sep = ""), width = 4800, height = 3600, res = 300)
 heatmap.2(as.matrix(data.step5.array), Colv = clustering.column, Rowv = clustering.row, scale = 'none', col = colorgradient(16), trace = "none", tracecol = "red", cexRow = 0.6, density.info = "density", densadj = 0.5)
 dev.off()
