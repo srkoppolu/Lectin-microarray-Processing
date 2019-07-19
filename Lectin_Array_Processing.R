@@ -50,7 +50,10 @@ med.norm <- "yes"
 z.cutoff <- 1.15
 
 # Choice of colors for the heatmap of final output data
-heatmap.color <- c("blue","yellow")
+heatmap.color <- c("blue","gray","yellow")
+clustering.row <- TRUE # TRUE if you want the lectins to be clustered in Heatmap
+clustering.column <- TRUE # TRUE if you want the samples (celllines) to be clustered in the heatmap
+
 
 
 
@@ -85,6 +88,8 @@ library("reshape2")
 
 # install.packages("matrixStats")
 library("matrixStats")
+
+
 
 
 
@@ -733,8 +738,8 @@ if (process.mode == "single"){
   
 }
 
-png(paste(substring(fname.output,1,nchar(fname.output)-4), "_heatmap.png", sep = ""), width = 1600, height = 1000, res = 100)
-heatmap(as.matrix(data.step5.array), Colv = NA, scale = 'none', col = colorgradient(16))
+png(paste(substring(fname.output,1,nchar(fname.output)-4), "_heatmap.png", sep = ""), width = 4800, height = 3600, res = 300)
+heatmap.2(as.matrix(data.step5.array), Colv = clustering.column, Rowv = clustering.row, scale = 'none', col = colorgradient(16), trace = "none", tracecol = "red", cexRow = 0.6, density.info = "density", densadj = 0.5)
 dev.off()
 
 
