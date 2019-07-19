@@ -1,5 +1,4 @@
 
-
 ############  Input Section  ##############
 ###########################################
 ###########################################
@@ -10,14 +9,13 @@
 WD <- "E:/Mahal_Lab/Praveen_Scripts/Lectin_Array_Processing"
 
 # Enter the name of the three input files.
-fname.data <- "praveen_input_data.txt" # Data File
-fname.lectins <- "input_lectins.txt" # Printlist of lectins, just the list of lectins used in order.
-fname.samples <- "input_samples.txt" # Samples file indicating arrays(blocks)
+fname.data <- "Zhongyin_Lectin_Array.txt" # Data File
+fname.lectins <- "Zhongyin_PrintList.txt" # Printlist of lectins, just the list of lectins used in order.
+fname.samples <- "Zhongyin_SamplesList.txt" # Samples file indicating arrays(blocks)
 
 # Desired filename for the output file
 # Do not include the ".txt" filetype at the end.
-fname.output <- "praveen_output_data.txt"
-
+fname.output <- "Zhongyin_output_data.txt"
 
 ###########################################
 
@@ -54,9 +52,6 @@ heatmap.color <- c("blue","gray","yellow")
 clustering.row <- TRUE # TRUE if you want the lectins to be clustered in Heatmap
 clustering.column <- TRUE # TRUE if you want the samples (celllines) to be clustered in the heatmap
 
-
-
-
 # Display preferences
 
 flag.display <- FALSE     # Display Flag Data 
@@ -64,8 +59,6 @@ flag.display <- FALSE     # Display Flag Data
 # Remove nothing (NULL) is default, but include Good (G), Bad(B), Absent(A), 
 # Not Found(N), Userdefined (U). Example : remove.flags <- c("B","A","N")
 remove.flags <- NULL
-
-
 
 
 ##############################################################################################
@@ -88,6 +81,9 @@ library("reshape2")
 
 # install.packages("matrixStats")
 library("matrixStats")
+
+# install.packages("gplots")
+library("gplots")
 
 
 
@@ -154,7 +150,7 @@ Qtest <- function(data, refdata){
   Emax <- refdata$E.max[refdata$Sample == sample & refdata$Lectin == lectin]
   Emin <- refdata$E.min[refdata$Sample == sample & refdata$Lectin == lectin]
   
-  if (data[3] == Emax || data[3] == Emin){
+  if (Emax == data[3] || Emin == data[3]){
     
   }else{as.numeric(data[3])}
 }
@@ -298,22 +294,41 @@ data <- read.table(fname.data, header = T, sep = "\t", na.strings = "NA", skip =
 #Get the column headers for the data
 headers <- colnames(data)
 
-# Get the indices for the column headers for the columns of interest (COI)
-blk.ind <- match("Block",headers)
-col.ind <- match("Column",headers)
-row.ind <- match("Row", headers)
-flg.ind <- match("Flags", headers)
-snr.635 <- match("SNR.635", headers)
-snr.532 <- match("SNR.532", headers)
-med.635 <- match("F635.Median...B635", headers)
-med.532 <- match("F532.Median...B532", headers)
-log.rat <- match("Log.Ratio..635.532.", headers)
+header.test <- substr(headers[1],1,1)
+
+if(header.test == "X"){
+  
+  # Get the indices for the column headers for the columns of interest (COI)
+  blk.ind <- match("X.Block.",headers)
+  col.ind <- match("X.Column.",headers)
+  row.ind <- match("X.Row.", headers)
+  flg.ind <- match("X.Flags.", headers)
+  snr.635 <- match("X.SNR.635.", headers)
+  snr.532 <- match("X.SNR.532.", headers)
+  med.635 <- match("X.F635.Median...B635.", headers)
+  med.532 <- match("X.F532.Median...B532.", headers)
+  log.rat <- match("X.Log.Ratio..635.532..", headers)
+  
+}else{
+  
+  # Get the indices for the column headers for the columns of interest (COI)
+  blk.ind <- match("Block",headers)
+  col.ind <- match("Column",headers)
+  row.ind <- match("Row", headers)
+  flg.ind <- match("Flags", headers)
+  snr.635 <- match("SNR.635", headers)
+  snr.532 <- match("SNR.532", headers)
+  med.635 <- match("F635.Median...B635", headers)
+  med.532 <- match("F532.Median...B532", headers)
+  log.rat <- match("Log.Ratio..635.532.", headers)
+  
+}
 
 # Form a new shortened data object with the columns of interest (COI)
 data.COI <- data.frame(data[,c(blk.ind, col.ind, row.ind, flg.ind, snr.635, snr.532,
-                               med.635, med.532, log.rat)])
+                               med.635, med.532)])
 colnames(data.COI) <- c("Block","Column","Row", "Flag", "SNR.635","SNR.532","Median.635",
-                        "Median.532","Log.Ratio.635.532")
+                        "Median.532")
 
 
 # Remove unnecessary objects
@@ -347,6 +362,7 @@ colnames(data.lectins) <- c("Row","Column","Lectin")
 # Re-arrange the final list of lectins in an array format
 lec.melt <- melt(data.lectins, id = c("Column","Row"))
 data.lectins <- cast(lec.melt, Row~Column)
+data.lectins[,1] <- NULL
 
 # Remove unwanted objects
 rm(input_lectins, rows, cols, lec.melt)
