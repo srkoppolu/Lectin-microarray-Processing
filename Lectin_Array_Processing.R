@@ -1,6 +1,8 @@
 
 
 ############  Input Section  ##############
+###########################################
+###########################################
 
 # Set the working directory (place where the input data files are stored).
 # Make sure to convert all the "\" to "/" in windows (Mac and Linux most likely 
@@ -12,6 +14,10 @@ fname.data <- "praveen_input_data.txt" # Data File
 fname.lectins <- "input_lectins.txt" # Printlist of lectins, just the list of lectins used in order.
 fname.samples <- "input_samples.txt" # Samples file indicating arrays(blocks)
 
+# Desired filename for the output file
+# Do not include the ".txt" filetype at the end.
+fname.output <- "praveen_output_data.txt"
+
 
 ###########################################
 
@@ -19,10 +25,8 @@ fname.samples <- "input_samples.txt" # Samples file indicating arrays(blocks)
 setwd(WD)
 
 ############  Input Preferences  ##############
-
-# Desired filename for the output file
-# Do not include the ".txt" filetype at the end.
-fname.output <- "praveen_output_data.txt"
+###############################################
+###############################################
 
 # Number of columns in an array. (Default : 15)
 n.cols <- 15
@@ -32,23 +36,18 @@ n.reps <- 3
 
 # Decide whether to use log ratio values or the background substituted median values.
 # If log ratios, enter "logvalues" and if median values, enter "medvalues"
-input.type <- "logvalues"
+input.type <- "medvalues"
 
 # Select the processing mode that you would like to use ( i.e., single color ("single") or dual color ("dual"))
-# If dual color, specify "Cy5" or "Cy3"
+# If single color, specify "Cy5" or "Cy3"
 process.mode <- "dual"
 select.channel = "Cy5"
 
 # Select whether median normalization is necessary.
 med.norm <- "yes"
 
-# Cut-off value for the z scores.
+# Cut-off value for the Q test scores. (If Zmax or Zmin > z.cutoff, those lectins are removed)
 z.cutoff <- 1.15
-
-
-
-
-
 
 
 
@@ -63,8 +62,11 @@ remove.flags <- NULL
 
 
 
-###############################################
-
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
+##############################################################################################
 
 
 ############  Load Packages  ##############
@@ -276,8 +278,8 @@ rm(con, meta.data, meta.type,meta.date,meta.settings,meta.pixelsize,meta.wavelen
 
 
 
-############  Data Processing :: Data Processing  ##############
-################################################################
+############  Data Processing :: Data Initialization  ##############
+####################################################################
 
 data <- read.table(fname.data, header = T, sep = "\t", na.strings = "NA", skip = 32,
                    blank.lines.skip = T, quote = "")
@@ -431,13 +433,14 @@ if (flag.display){
   
   
   
+  
 }
 
 ######################################################
 
 
 
-############  Data Processing :: Block 3  ##############
+############  Data Processing :: Data Processing  ##############
 ########################################################
 
 ############ Step 1 : Original Values
@@ -524,35 +527,52 @@ if (process.mode == "dual"){
     data.step4.635$Thresh <- apply(data.step4.635, 1, threshold)
     data.step4.532$Thresh <- apply(data.step4.532, 1, threshold)
     
-    # Apply log2 to the threshold values of each channel
-    data.step4.635$LogThresh <- log2(data.step4.635$Thresh)
-    data.step4.532$LogThresh <- log2(data.step4.532$Thresh)
+    if (med.norm == "yes"){
+      
+      # Apply log2 to the threshold values of each channel
+      data.step4.635$LogThresh <- log2(data.step4.635$Thresh)
+      data.step4.532$LogThresh <- log2(data.step4.532$Thresh)
+      
+      # Calculate the median for the Log Threshold values for each channel
+      LogThresh.Median.635 <- aggregate(data.step4.635$LogThresh, by = list(Sample = data.step4.635$Sample), median)
+      colnames(LogThresh.Median.635) <- c("Sample","Median")
+      LogThresh.Median.532 <- aggregate(data.step4.532$LogThresh, by = list(Sample = data.step4.532$Sample), median)
+      colnames(LogThresh.Median.532) <- c("Sample","Median")
+      
+      LogThresh.Median.635 <- rep(LogThresh.Median.635$Median, each = as.numeric(n.lectins))
+      LogThresh.Median.532 <- rep(LogThresh.Median.532$Median, each = as.numeric(n.lectins))
+      
+      # Perform median centering (Median Normalization) by subtracting the median value from each value in both channels
+      data.step4.635$MedCen.LogThresh <- data.step4.635$LogThresh - LogThresh.Median.635
+      data.step4.532$MedCen.LogThresh <- data.step4.532$LogThresh - LogThresh.Median.532
+      
+      # Data in step5 is the final data in a premature data.frame format with log(635/532) channels
+      data.step5 <- data.step4.635[,1:2]
+      data.step5$LogRatio <- data.step4.635$MedCen.LogThresh - data.step4.532$MedCen.LogThresh
+      
+      # Finally rearrange the data into an array such that lectins are along the rows and samples across columns.
+      data.step5.melt <- melt(data.step5, id = c("Lectin","Sample"))
+      data.step5.array <- cast(data.step5.melt, Lectin~Sample)
+      
+      write.table(data.step5.array, fname.output, row.names = FALSE, col.names = TRUE, sep = "\t")
+      
+    }
     
-    # Calculate the median for the Log Threshold values for each channel
-    LogThresh.Median.635 <- aggregate(data.step4.635$LogThresh, by = list(Sample = data.step4.635$Sample), median)
-    colnames(LogThresh.Median.635) <- c("Sample","Median")
-    LogThresh.Median.532 <- aggregate(data.step4.532$LogThresh, by = list(Sample = data.step4.532$Sample), median)
-    colnames(LogThresh.Median.532) <- c("Sample","Median")
-    
-    LogThresh.Median.635 <- rep(LogThresh.Median.635$Median, each = as.numeric(n.lectins))
-    LogThresh.Median.532 <- rep(LogThresh.Median.532$Median, each = as.numeric(n.lectins))
-    
-    
-    
-    # Perform median centering (Median Normalization) by subtracting the median value from each value in both channels
-    data.step4.635$MedCen.LogThresh <- data.step4.635$LogThresh - LogThresh.Median.635
-    data.step4.532$MedCen.LogThresh <- data.step4.532$LogThresh - LogThresh.Median.532
-    
-    # Data in step5 is the final data in a premature data.frame format with log(635/532) channels
-    data.step5 <- data.step4.635[,1:2]
-    data.step5$LogRatio <- data.step4.635$MedCen.LogThresh - data.step4.532$MedCen.LogThresh
-    
-    # Finally rearrange the data into an array such that lectins are along the rows and samples across columns.
-    data.step5.melt <- melt(data.step5, id = c("Lectin","Sample"))
-    data.step5.array <- cast(data.step5.melt, Lectin~Sample)
-    
-    write.table(data.step5.array, fname.output, row.names = FALSE, col.names = TRUE, sep = "\t")
-    
+    if (med.norm == "no"){
+      
+      data.step5 <- data.step4.635[,1:2]
+      data.step5.ratios <- data.step4.635$Thresh/data.step4.532$Thresh
+      data.step5$logratios <- log2(data.step5.ratios)
+      
+      # Finally rearrange the data into an array such that lectins are along the rows and samples across columns.
+      data.step5.melt <- melt(data.step5, id = c("Lectin","Sample"))
+      data.step5.array <- cast(data.step5.melt, Lectin~Sample)
+      
+      write.table(data.step5.array, fname.output, row.names = FALSE, col.names = TRUE, sep = "\t")
+      
+      
+      
+    }
     
   }
   
@@ -707,6 +727,9 @@ if (process.mode == "single"){
   
   
 }
+
+heatmap(as.matrix(data.step5.array), Colv = NA, scale = 'none', col = c("blue","yellow"))
+
 
 
 ########################################################
