@@ -1,0 +1,346 @@
+													Column	Row	Lectin									
+													1	1	AAA 									
+													2	1	AAA 									
+													3	1	AAA 									
+													4	1	AAL									
+													5	1	AAL									
+													6	1	AAL									
+													7	1	AOL									
+													8	1	AOL									
+													9	1	AOL									
+													10	1	UEA-I									
+													11	1	UEA-I									
+													12	1	UEA-I									
+													13	1	PTL-II									
+													14	1	PTL-II									
+													15	1	PTL-II									
+													1	2	TJA-II									
+													2	2	TJA-II									
+													3	2	TJA-II									
+													4	2	PSA									
+													5	2	PSA									
+													6	2	PSA									
+													7	2	CCA									
+													8	2	CCA									
+													9	2	CCA									
+													10	2	LFA									
+													11	2	LFA									
+													12	2	LFA									
+													13	2	LPA 									
+													14	2	LPA 									
+													15	2	LPA 									
+													1	3	MAA new									
+													2	3	MAA new									
+													3	3	MAA new									
+													4	3	MAL-I vector									
+													5	3	MAL-I vector									
+													6	3	MAL-I vector									
+													7	3	MAL-II vector									
+													8	3	MAL-II vector									
+													9	3	MAL-II vector									
+													10	3	SNA									
+													11	3	SNA									
+													12	3	SNA									
+													13	3	TJA-I									
+													14	3	TJA-I									
+													15	3	TJA-I									
+													1	4	PSL									
+													2	4	PSL									
+													3	4	PSL									
+													4	4	PHA-L Vector									
+													5	4	PHA-L Vector									
+													6	4	PHA-L Vector									
+													7	4	PHA-L EY									
+													8	4	PHA-L EY									
+													9	4	PHA-L EY									
+													10	4	ECA									
+													11	4	ECA									
+													12	4	ECA									
+													13	4	RCA (fridge)									
+													14	4	RCA (fridge)									
+													15	4	RCA (fridge)									
+													1	5	PHA-E Vector									
+													2	5	PHA-E Vector									
+													3	5	PHA-E Vector									
+													4	5	PHA-E EY									
+													5	5	PHA-E EY									
+													6	5	PHA-E EY									
+													7	5	CA									
+													8	5	CA									
+													9	5	CA									
+													10	5	BPA									
+													11	5	BPA									
+													12	5	BPA									
+													13	5	APA old									
+													14	5	APA old									
+													15	5	APA old									
+													1	6	GS-I Vector									
+													2	6	GS-I Vector									
+													3	6	GS-I Vector									
+													4	6	GS-I EY									
+													5	6	GS-I EY									
+													6	6	GS-I EY									
+													7	6	APP									
+													8	6	APP									
+													9	6	APP									
+													10	6	BDA  new									
+													11	6	BDA  new									
+													12	6	BDA  new									
+													13	6	Blackbean									
+													14	6	Blackbean									
+													15	6	Blackbean									
+													1	7	CAA									
+													2	7	CAA									
+													3	7	CAA									
+													4	7	CSA									
+													5	7	CSA									
+													6	7	CSA									
+													7	7	IRA new									
+													8	7	IRA new									
+													9	7	IRA new									
+													10	7	VVA									
+													11	7	VVA									
+													12	7	VVA									
+													13	7	WFA									
+													14	7	WFA									
+													15	7	WFA									
+													1	8	ASA									
+													2	8	ASA									
+													3	8	ASA									
+													4	8	AMA new									
+													5	8	AMA new									
+													6	8	AMA new									
+													7	8	Calsepa new									
+													8	8	Calsepa new									
+													9	8	Calsepa new									
+													10	8	Con A new									
+													11	8	Con A new									
+													12	8	Con A new									
+													13	8	CVN 									
+													14	8	CVN 									
+													15	8	CVN 									
+													1	9	GNA old									
+													2	9	GNA old									
+													3	9	GNA old									
+													4	9	GRFT new									
+													5	9	GRFT new									
+													6	9	GRFT new									
+													7	9	HHL									
+													8	9	HHL									
+													9	9	HHL									
+													10	9	NPA old									
+													11	9	NPA old									
+													12	9	NPA old									
+													13	9	SVN									
+													14	9	SVN									
+													15	9	SVN									
+													1	10	MNA-M 									
+													2	10	MNA-M 									
+													3	10	MNA-M 									
+													4	10	PMA									
+													5	10	PMA									
+													6	10	PMA									
+													7	10	TL									
+													8	10	TL									
+													9	10	TL									
+													10	10	UDA									
+													11	10	UDA									
+													12	10	UDA									
+													13	10	VVA (mann) 									
+													14	10	VVA (mann) 									
+													15	10	VVA (mann) 									
+													1	11	VFA									
+													2	11	VFA									
+													3	11	VFA									
+													4	11	LcH									
+													5	11	LcH									
+													6	11	LcH									
+													7	11	"Jacalin, AIA"									
+													8	11	"Jacalin, AIA"									
+													9	11	"Jacalin, AIA"									
+													10	11	EEL 									
+													11	11	EEL 									
+													12	11	EEL 									
+													13	11	EEA									
+													14	11	EEA									
+													15	11	EEA									
+													1	12	MPA (Vector)									
+													2	12	MPA (Vector)									
+													3	12	MPA (Vector)									
+													4	12	GHA									
+													5	12	GHA									
+													6	12	GHA									
+													7	12	PNA Vector									
+													8	12	PNA Vector									
+													9	12	PNA Vector									
+													10	12	PNA EY									
+													11	12	PNA EY									
+													12	12	PNA EY									
+													13	12	CF									
+													14	12	CF									
+													15	12	CF									
+													1	13	NJAM									
+													2	13	NJAM									
+													3	13	NJAM									
+													4	13	ACA									
+													5	13	ACA									
+													6	13	ACA									
+													7	13	DBA									
+													8	13	DBA									
+													9	13	DBA									
+													10	13	SBA									
+													11	13	SBA									
+													12	13	SBA									
+													13	13	SJA									
+													14	13	SJA									
+													15	13	SJA									
+													1	14	HAA									
+													2	14	HAA									
+													3	14	HAA									
+													4	14	GHA									
+													5	14	GHA									
+													6	14	GHA									
+													7	14	HPA EY									
+													8	14	HPA EY									
+													9	14	HPA EY									
+													10	14	HPA Sigma									
+													11	14	HPA Sigma									
+													12	14	HPA Sigma									
+													13	14	SNA-II									
+													14	14	SNA-II									
+													15	14	SNA-II									
+													1	15	PTL-I									
+													2	15	PTL-I									
+													3	15	PTL-I									
+													4	15	LBA									
+													5	15	LBA									
+													6	15	LBA									
+													7	15	DSA EY									
+													8	15	DSA EY									
+													9	15	DSA EY									
+													10	15	DSA Vector									
+													11	15	DSA Vector									
+													12	15	DSA Vector									
+													13	15	GS-II									
+													14	15	GS-II									
+													15	15	GS-II									
+													1	16	UEA-II									
+													2	16	UEA-II									
+													3	16	UEA-II									
+													4	16	DSA Fridge									
+													5	16	DSA Fridge									
+													6	16	DSA Fridge									
+													7	16	RPA									
+													8	16	RPA									
+													9	16	RPA									
+													10	16	LEA Vector									
+													11	16	LEA Vector									
+													12	16	LEA Vector									
+													13	16	LEA EY									
+													14	16	LEA EY									
+													15	16	LEA EY									
+													1	17	STA									
+													2	17	STA									
+													3	17	STA									
+													4	17	WGA Vector									
+													5	17	WGA Vector									
+													6	17	WGA Vector									
+													7	17	WGA EY									
+													8	17	WGA EY									
+													9	17	WGA EY									
+													10	17	Cholera Toxin (fridge)									
+													11	17	Cholera Toxin (fridge)									
+													12	17	Cholera Toxin (fridge)									
+													13	17	MOA new									
+													14	17	MOA new									
+													15	17	MOA new									
+													1	18	MNA-G									
+													2	18	MNA-G									
+													3	18	MNA-G									
+													4	18	Lotus									
+													5	18	Lotus									
+													6	18	Lotus									
+													7	18	IAA									
+													8	18	IAA									
+													9	18	IAA									
+													10	18	PTA									
+													11	18	PTA									
+													12	18	PTA									
+													13	18	Ricin B Chain (Fridge)									
+													14	18	Ricin B Chain (Fridge)									
+													15	18	Ricin B Chain (Fridge)									
+													1	19	GS-I									
+													2	19	GS-I									
+													3	19	GS-I									
+													4	19	NPA									
+													5	19	NPA									
+													6	19	NPA									
+													7	19	GNA									
+													8	19	GNA									
+													9	19	GNA									
+													10	19	Galectin 1									
+													11	19	Galectin 2									
+													12	19	Galectin 3									
+													13	19	Galectin 3									
+													14	19	Galectin 4									
+													15	19	Galectin 5									
+													1	20	PA-I 									
+													2	20	PA-I 									
+													3	20	PA-I 									
+													4	20	Gaf D									
+													5	20	Gaf D									
+													6	20	Gaf D									
+													7	20	PA-IL									
+													8	20	PA-IL									
+													9	20	PA-IL									
+													10	20	PA-IIL S22A									
+													11	20	PA-IIL S22A									
+													12	20	PA-IIL S22A									
+													13	20	RSIIL A22S									
+													14	20	RSIIL A22S									
+													15	20	RSIIL A22S									
+													1	21	Joao's									
+													2	21	Joao's									
+													3	21	Joao's									
+													4	21	Anti-Blood Group Lewis y antibody [F3]									
+													5	21	Anti-Blood Group Lewis y antibody [F3]									
+													6	21	Anti-Blood Group Lewis y antibody [F3]									
+													7	21	Anti-Blood Group Lewis a antibody [T174] 									
+													8	21	Anti-Blood Group Lewis a antibody [T174] 									
+													9	21	Anti-Blood Group Lewis a antibody [T174] 									
+													10	21	Anti-CA19-9 antibody [121SLE]									
+													11	21	Anti-CA19-9 antibody [121SLE]									
+													12	21	Anti-CA19-9 antibody [121SLE]									
+													13	21	Anti-Blood Group B Antigen antibody [Z5H-2] 									
+													14	21	Anti-Blood Group B Antigen antibody [Z5H-2] 									
+													15	21	Anti-Blood Group B Antigen antibody [Z5H-2] 									
+													1	22	Anti-Sialyl Tn antibody [BRIC111] 									
+													2	22	Anti-Sialyl Tn antibody [BRIC111] 									
+													3	22	Anti-Sialyl Tn antibody [BRIC111] 									
+													4	22	Anti-Sialyl Lewis x Mouse mAb (KM93)									
+													5	22	Anti-Sialyl Lewis x Mouse mAb (KM93)									
+													6	22	Anti-Sialyl Lewis x Mouse mAb (KM93)									
+													7	22	Forssman Antigen Antibody (M1/87.27.7.HLK)									
+													8	22	Forssman Antigen Antibody (M1/87.27.7.HLK)									
+													9	22	Forssman Antigen Antibody (M1/87.27.7.HLK)									
+													10	22	7 LE lewis A									
+													11	22	8 LE lewis A									
+													12	22	9 LE lewis A									
+													13	22	2-25 LE lewis B									
+													14	22	2-25 LE lewis B									
+													15	22	2-25 LE lewis B									
+													1	23	SPM 10 Sialyl Lewis A									
+													2	23	SPM 10 Sialyl Lewis A									
+													3	23	SPM 10 Sialyl Lewis A									
+													4	23	Le X P12 SCBT									
+													5	23	Le X P12 SCBT									
+													6	23	Le X P12 SCBT									
+													7	23	Le X R and D									
+													8	23	Le X R and D									
+													9	23	Le X R and D									
+													10	23	Lewis Y									
+													11	23	Lewis Y									
+													12	23	Lewis Y									
+													13	23	Extra spot									
+													14	23	Extra spot									
+													15	23	Extra spot									

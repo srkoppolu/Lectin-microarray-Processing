@@ -1,0 +1,13 @@
+Input Data File =  brian_raw_input_file.txt 
+Input Lectins File =  brian_input_lectins.txt 
+Input Samples File =  brian_input_samples.txt 
+Type =  GenePix Export 3" 
+Date and Time =  2013/09/11 19:05:49" 
+Settings =  E:\Research\Mahal\DATA\Arrays\014501_091113\014501_111813working.gps" 
+Pixel Size =  5" 
+Wavelengths =  635 ,  532 
+Image File =  E:\Research\Mahal\DATA\Arrays\014501_091113\635_PMT600_532_PMT500.tif 2 
+PMT Gain =  600 ,  500 
+Scan Power =  100 ,  100 
+Laser Power =  1.65 ,  2.14 
+Filters =  Standard Red ,  Standard Green" 
