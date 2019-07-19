@@ -5,13 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "327502525",
+    "hash" : "0",
     "id" : "BB95C01B",
     "lastKnownWriteTime" : 1390430191,
     "last_content_update" : 1390430191,
     "path" : "E:/Dropbox/Mahal_lab/Praveen_Scripts/Lectin_Array_Processing/Lectin_Array_Processing_v1.0.R",
     "project_path" : null,
     "properties" : {
+        "cursorPosition" : "712,0",
+        "scrollLine" : "0"
     },
     "read_only" : false,
     "read_only_alternatives" : [
