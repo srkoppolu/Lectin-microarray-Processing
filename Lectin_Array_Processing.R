@@ -15,7 +15,7 @@ fname.samples <- "Zhongyin_SamplesList.txt" # Samples file indicating arrays(blo
 
 # Desired filename for the output file
 # Do not include the ".txt" filetype at the end.
-fname.output <- "Zhongyin_output_data.txt"
+fname.output <- "Zhongyin_output_data"
 
 ###########################################
 
